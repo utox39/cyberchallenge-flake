@@ -5,19 +5,26 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
   };
 
-  outputs = { self, nixpkgs }: 
+  outputs =
+    { self, nixpkgs }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
       };
-    in {
+    in
+    {
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
           php
-          python314
-          python314Packages.pip
+          python313
+          python313Packages.pip
+          python313Packages.pycryptodome
+          python313Packages.pwntools
+          python313Packages.requests
+          python313Packages.pyshark
+          python313Packages.ropper
           javaPackages.compiler.openjdk21
           ngrok
           binwalk
@@ -29,6 +36,7 @@
           ruby
           ghidra
           burpsuite
+          checksec
         ];
 
         shellHook = ''

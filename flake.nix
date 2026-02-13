@@ -37,6 +37,7 @@
           ghidra
           burpsuite
           checksec
+          radare2
         ];
 
         shellHook = ''

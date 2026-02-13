@@ -38,6 +38,7 @@
           burpsuite
           checksec
           radare2
+          iaito
         ];
 
         shellHook = ''

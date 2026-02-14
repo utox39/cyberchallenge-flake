@@ -23,6 +23,7 @@
           python313Packages.pycryptodome
           python313Packages.pwntools
           python313Packages.requests
+          python313Packages.beautifulsoup4
           python313Packages.pyshark
           python313Packages.ropper
           javaPackages.compiler.openjdk21
